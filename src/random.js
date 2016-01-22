@@ -1,38 +1,33 @@
 var disallowedNumbers = [0];
-var result = null;
 
 $(function () {
 	$('#goButton').click(function () {
 		var numberOfStudents = $("#numberInput").val();
-		console.log("numberOfStudents = " + numberOfStudents);
 
-		var result = random(numberOfStudents);
-
-		while (!isAllowed()){
-			result = random(numberOfStudents);
-		}
-
-		updateResult(result);
+		if(disallowedNumbers.length <= numberOfStudents) updateResult(random(numberOfStudents));
 	});
 });
 
-$("#numberInput").keypress(function(event){
-    console.log(event.keyCode);       //debug
-    if (event.keyCode == 13)
-        alert("Go!");
+$(function () {
+	$("#numberInput").keypress(function(event){
+		if (event.keyCode == 13)
+			alert("Go!");
+	});
 });
 		
 function random (max) {
-	return Math.floor(Math.random() * max) + 1;
+	var r = Math.floor(Math.random() * max) + 1;
+	
+	if(!isAllowed(r)) return random(max);
+	return r;
 }
 
-function isAllowed () {
-	disallowedNumbers.forEach(function (item, index, array) {
-		if(result == item){
+function isAllowed (number) {
+	for (var i = 0; i < disallowedNumbers.length; i++){
+		if(number == disallowedNumbers[i]){
 			return false;
 		}
-	});
-	
+	}
 	return true;
 }
 
