@@ -3,8 +3,8 @@ var result = null;
 
 $(function () {
 	$('#goButton').click(function () {
-		console.log("button pressed, " + disallowedNumbers);
 		var numberOfStudents = $("#numberInput").val();
+		console.log("numberOfStudents = " + numberOfStudents);
 
 		var result = random(numberOfStudents);
 
@@ -23,7 +23,7 @@ $("#numberInput").keypress(function(event){
 });
 		
 function random (max) {
-	return Math.random(max) + 1;
+	return Math.floor(Math.random() * max) + 1;
 }
 
 function isAllowed () {
@@ -40,7 +40,6 @@ function updateResult (number) {
 	$("#output").html(number);
 	
 	if(disallowedNumbers == 0) {
-		console.log("first number added");
 		$("#numberWrapper ul").html('<li>' + number + '</li>');
 	}
 	else {
