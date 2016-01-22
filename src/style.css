@@ -26,17 +26,17 @@ input[type=number]::-webkit-outer-spin-button {
 	margin: 0; 
 }
 
-form {
+#form {
 	display: table;
 	margin: 40px auto;
 }
 
-form label {
+#form label {
 	position: relative;
 	display: block;
 }
 
-form label input {
+#form label input {
 	font-size: 18px;
 	box-sizing: border-box;
 	display: block;
@@ -50,61 +50,61 @@ form label input {
 	transition: all 0.2s ease-in-out;
 }
 
-form label input::-webkit-input-placeholder {
+#form label input::-webkit-input-placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-form label input::-moz-placeholder {
+#form label input::-moz-placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-form label input:-ms-input-placeholder {
+#form label input:-ms-input-placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-form label input::placeholder {
+#form label input::placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-form label input:focus, form label input.populated {
+#form label input:focus, #form label input.populated {
 	padding-top: 28px;
 	padding-bottom: 12px;
 }
 
-form label input:focus::-webkit-input-placeholder, form label input.populated::-webkit-input-placeholder {
+#form label input:focus::-webkit-input-placeholder, #form label input.populated::-webkit-input-placeholder {
 	color: transparent;
 }
 
-form label input:focus::-moz-placeholder, form label input.populated::-moz-placeholder {
+#form label input:focus::-moz-placeholder, #form label input.populated::-moz-placeholder {
 	color: transparent;
 }
 
-form label input:focus:-ms-input-placeholder, form label input.populated:-ms-input-placeholder {
+#form label input:focus:-ms-input-placeholder, #form label input.populated:-ms-input-placeholder {
 	color: transparent;
 }
 
-form label input:focus::placeholder, form label input.populated::placeholder {
+#form label input:focus::placeholder, #form label input.populated::placeholder {
 	color: transparent;
 }
 
-form label input:focus + span, form label input.populated + span {
+#form label input:focus + span, #form label input.populated + span {
 	opacity: 1;
 	top: 10px;
 }
 
-form label span {
+#form label span {
 	color: #35dc9b;
 	font-size: 13px;
 	position: absolute;
@@ -144,7 +144,7 @@ button:hover {
 #numberWrapper ul{
 	list-style-type: none;
 	background-color: white;
-	color: #939393;
+	color: #e64740;
 }
 
 #notice{
