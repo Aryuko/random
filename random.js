@@ -1,55 +1,52 @@
-var disallowedNumbers = [0];
+var disallowedNames = [];
 
 $(function () {
 	$('#goButton').click(clickEvent);
-	
-	$("#numberInput").keypress(function(event){
-		if (event.keyCode == 13)
-			clickEvent();
-	});
 });
 
 function clickEvent () {
-	var numberOfStudents = $("#numberInput").val();
-
-	if(disallowedNumbers.length <= numberOfStudents) updateResult(random(numberOfStudents));
+	var numberOfStudents = presentStudents.length;
+	if(disallowedNames.length < numberOfStudents) updateResult(presentStudents[random(numberOfStudents)]);
 }
 
 function random (max) {
-	var r = Math.floor(Math.random() * max) + 1;
+	var r = Math.floor(Math.random() * max);
 	
 	if(!isAllowed(r)) return random(max);
 	return r;
 }
 
-function isAllowed (number) {
-	for (var i = 0; i < disallowedNumbers.length; i++){
-		if(number == disallowedNumbers[i]){
+function isAllowed (index) {
+	var student = presentStudents[index];
+	
+	for (var i = 0; i < disallowedNames.length; i++){
+		if(student == disallowedNames[i]){
 			return false;
 		}
 	}
 	return true;
 }
 
-function updateResult (number) {
-	$("#output").html(number);
+function updateResult (student) {
+	$("#output").html('<a href="https://gits-15.sys.kth.se/INDA15/' + student + '-week-15" target="_blank">' + student + '</a>');
 	
-	if(disallowedNumbers == 0) {
-		$("#numberWrapper ul").html('<li>' + number + '</li>');
+	var html = '<li>' + student + '</li>';
+	if(disallowedNames.length == 0) {
+		$("#numberWrapper ul").html(html);
 	}
 	else {
-		$("#numberWrapper ul").append('<li>' + number + '</li>');
+		$("#numberWrapper ul").append(html);
 	}
-	disallowedNumbers.push(number);
+	disallowedNames.push(student);
 }
 
 $(function () {
 	$('body').delegate('ul#disallowed li', 'click', function () {
-		if (disallowedNumbers != 0) {
-			var number = $(this).text();
-			disallowedNumbers.splice(disallowedNumbers.indexOf(number), 1);
+		if (disallowedNames.size != 0) {
+			var student = $(this).text();
+			disallowedNames.splice(disallowedNames.indexOf(student), 1);
 			$(this).remove();
-			if (disallowedNumbers.length - 1 == 0) {
+			if (disallowedNames.length == 0) {
 				$('#clearButton').click();
 			}
 		}
@@ -58,8 +55,8 @@ $(function () {
 
 $(function () {
 	$('#clearButton').click(function () {
-		updateResult("0");
-		disallowedNumbers = [0];
-		$("#numberWrapper ul").html('<li id="notice">No previous numbers generated</li>');
+		updateResult(0);
+		disallowedNames = [];
+		$("#numberWrapper ul").html('<li class="notice">No previous students selected</li>');
 	});
 });

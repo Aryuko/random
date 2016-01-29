@@ -220,6 +220,11 @@ button:active {
 	margin: .2em;
 }
 
+#output a {
+	color: #00aa68;
+	text-decoration: none;
+}
+
 #numberWrapper ul{
 	margin: .5em;
 	list-style-type: none;
