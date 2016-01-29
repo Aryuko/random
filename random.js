@@ -28,7 +28,7 @@ function isAllowed (index) {
 }
 
 function updateResult (student) {
-	$("#output").html('<a href="https://gits-15.sys.kth.se/INDA15/' + student + '-week-15" target="_blank">' + student + '</a>');
+	$("#output").html('<a href="https://gits-15.sys.kth.se/INDA15/' + student + '-week-' + week + '" target="_blank">' + student + '</a>');
 	
 	var html = '<li>' + student + '</li>';
 	if(disallowedNames.length == 0) {

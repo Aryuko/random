@@ -1,5 +1,6 @@
 var students = [];
 var presentStudents = [];
+var week = 15;
 
 $(function () {
 	getCookies();
@@ -15,6 +16,7 @@ $(function () {
 function getCookies () {
 	var studentsCookie = Cookies.getJSON('students');
 	var presentStudentsCookie = Cookies.getJSON('presentStudents');
+	var weekCookie = Cookies.get('week');
 	
 	if(studentsCookie != null){
 		students = studentsCookie;
@@ -22,8 +24,9 @@ function getCookies () {
 	if(presentStudentsCookie != null){
 		presentStudents = presentStudentsCookie;
 	}
-	console.log("students: " + students + "    present: " + presentStudents);
-	console.log(students.length + "    " + presentStudents.length);
+	if(weekCookie != null){
+		week = weekCookie;
+	}
 	
 	initNames();
 }
@@ -31,6 +34,7 @@ function getCookies () {
 function setCookies () {
 	Cookies.set('students', students, {expires: 365});
 	Cookies.set('presentStudents', presentStudents, {expires: 365});
+	Cookies.set('week', week, {expires: 365});
 }
 
 function initNames () {
@@ -101,7 +105,7 @@ function isPresent (student) {
 
 $(function () {
 	$('#clear-names-button').click(function () {
-		$("#names").html('<li class="notice">No handles added</li>');
+		$("#names").html('<li class="notice">None</li>');
 		students = [];
 		presentStudents = [];
 		setCookies();
