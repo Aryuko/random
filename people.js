@@ -12,6 +12,8 @@ $(function () {
 
 function addClickEvent () {
 	var newName = $("#nameInput").val();
+	$("#nameInput").val('');
+	$("#nameInput").removeClass('populated');
 	if(newName !=  "" && !alreadyAdded(newName)) updateNames(newName);
 }
 
