@@ -80,13 +80,17 @@ body{
 }
 
 #wrapper {
-	margin: auto;
+	display: flex;
+	flex-direction: row;
 	padding: 2em;
-	max-width: 30em;
+	max-width: 60em;
+	margin: auto;
 }
 
 #numberWrapper {
-	margin-top: 2em;
+	/margin-top: 2em;
+	height: 100%;
+	width: 50%;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -97,7 +101,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form {
 	display: table;
-	margin: 40px auto;
+	margin: auto;
 }
 
 .form label {
@@ -217,7 +221,8 @@ button:active {
 	background: white;
 	color: #00aa68;
 	padding: 16px 40px;
-	margin: .2em;
+	float: left;
+	/margin: .2em;
 }
 
 #output a {
@@ -226,7 +231,7 @@ button:active {
 }
 
 #numberWrapper ul{
-	margin: .5em;
+	/margin: .5em;
 	list-style-type: none;
 	background-color: white;
 	color: #e64740;
@@ -271,12 +276,14 @@ button:active {
 }
 
 #names-wrapper {
-	margin: .5em;
+	/margin: .5em;
+	height: 100%;
+	width: 50%;
 }
 
 #names-wrapper ul{
 	text-align: left;
-	margin: .5em;
+	/margin: .5em;
 	list-style-type: none;
 	background-color: white;
 }
@@ -314,3 +321,17 @@ button:active {
 }
 
 /* Footer */
+
+
+
+#selectionBox {
+	display: inline-block;
+	margin: 20px auto;
+}
+
+#goButton {
+	float: left;
+}
+
+#content {
+}

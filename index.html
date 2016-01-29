@@ -14,11 +14,13 @@
 		<title>Random Student Selector</title>
 	</head>
 	<body>
-		<a href="https://github.com/Zalodu/random"><img id="github-image" src="http://cdn.flaticon.com/png/256/25231.png" alt="GitHub"></a>
-		<div id="wrapper">
-			  <button id="goButton">Select a student</button>
-			<p>Selected student:<p>
+		<div id="selectionBox">
+			<button id="goButton">Select a student</button>
+			<!--p>Selected student:<p-->
 			<div id="output">None</div>
+		</div>
+		
+		<div id="wrapper">
 			<div id="numberWrapper">
 				<p>Students already selected this övning:</p>
 				<ul id="disallowed">
@@ -27,6 +29,7 @@
 				<div class="clearBoth"></div>
 				<button id="clearButton">Clear All</button>
 			</div>
+			
 			<div id="names-wrapper">
 				<div class="form">
 					<label>
@@ -37,11 +40,11 @@
 					<button id="clear-names-button">Clear All</button>
 				</div>
 				
-				<p>Handles:</p>
 				<ul id="names">
 					<li class="notice">No handles added</li>
 				</ul>
 			</div>
 		</div>
+		<a href="https://github.com/Zalodu/random"><img id="github-image" src="http://cdn.flaticon.com/png/256/25231.png" alt="GitHub"></a>
 	</body>
 </html>
