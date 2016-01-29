@@ -56,6 +56,6 @@ $(function () {
 $(function () {
 	$('#clearButton').click(function () {
 		disallowedNames = [];
-		$("#numberWrapper ul").html('<li class="notice">No previous students selected</li>');
+		$("#numberWrapper ul").html('<li class="notice">No students previously selected</li>');
 	});
 });
