@@ -205,7 +205,7 @@ button:hover {
 
 button:active {
 	outline: none;
-	box-shadow:.1em .1em 1em #148559 inset;
+	box-shadow:.1em .1em 1em #9a9a9a inset;
 }
 
 #output {
