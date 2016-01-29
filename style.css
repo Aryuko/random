@@ -61,10 +61,6 @@ body{
 
 /* Utility */
 
-.clear-both {
-	clear: both;
-}
-
 /* Header */
 
 /* Body */
@@ -338,6 +334,19 @@ button:active {
 #clear-names-button:hover {
 	background: #db443e;
 }
+
+input[type="checkbox"] + span{
+	color: #db443e;
+	transition: color 0.2s;
+} 
+
+input[type="checkbox"]:checked + span{
+	color: #1aaf75;
+}
+
+input[type="checkbox"]:checked + label{
+	background: #1aaf75;
+} 
 
 #addButton {
 	padding: 6px 16px;

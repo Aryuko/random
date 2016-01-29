@@ -109,8 +109,7 @@ $(function () {
 		students = [];
 		presentStudents = [];
 		setCookies();
-		
-		//console.log(presentStudents);
+		$("#clearButton").click();
 	});
 });
 
@@ -118,16 +117,10 @@ $(document).on("change", ":checkbox", function (e) {
 	if($(this).is(":checked")) {
 		var name = $(this).next().text();
 		presentStudents.push(name);
-		
-		//console.log("checked, " + name);
-		//console.log("present:"  + presentStudents);
 	}
 	else {
 		var name = $(this).next().text();
 		presentStudents.splice(presentStudents.indexOf(name), 1);
-		
-		//console.log("unchecked, " + name);
-		//console.log("present:"  + presentStudents);
 	}
 	setCookies();
 });
