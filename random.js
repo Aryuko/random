@@ -44,6 +44,19 @@ function updateResult (number) {
 }
 
 $(function () {
+	$('body').delegate('ul#disallowed li', 'click', function () {
+		if (disallowedNumbers != 0) {
+			var number = $(this).text();
+			disallowedNumbers.splice(disallowedNumbers.indexOf(number), 1);
+			$(this).remove();
+			if (disallowedNumbers.length - 1 == 0) {
+				$('#clearButton').click();
+			}
+		}
+	});
+});
+
+$(function () {
 	$('#clearButton').click(function () {
 		updateResult("0");
 		disallowedNumbers = [0];
