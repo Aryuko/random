@@ -18,7 +18,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -84,7 +84,7 @@ body{
 	flex-direction: row;
 	padding: 2em;
 	max-width: 60em;
-	margin: auto;
+	margin: auto ;
 }
 
 #numberWrapper {
@@ -116,7 +116,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: none;
 	padding: 20px;
 	width: 300px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-size: 18px;
 	outline: none;
 	-webkit-transition: all 0.2s ease-in-out;
@@ -222,7 +222,6 @@ button:active {
 	color: #00aa68;
 	padding: 16px 40px;
 	float: left;
-	/margin: .2em;
 }
 
 #output a {
@@ -236,6 +235,10 @@ button:active {
 	background-color: white;
 	color: #e64740;
 	cursor: pointer;
+}
+
+#disallowed {
+	margin-bottom: 10px;
 }
 
 #disallowed > li {
@@ -305,6 +308,11 @@ button:active {
 #names-wrapper li:hover {
 	background-color: #f2f2f2;
 }
+
+#names {
+	margin-top: 10px;
+}
+
 #clear-names-button {
 	padding: 6px 16px;
 	background: #e64740;

@@ -55,7 +55,6 @@ $(function () {
 
 $(function () {
 	$('#clearButton').click(function () {
-		updateResult(0);
 		disallowedNames = [];
 		$("#numberWrapper ul").html('<li class="notice">No previous students selected</li>');
 	});
