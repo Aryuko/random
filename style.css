@@ -68,7 +68,9 @@ body{
 /* Header */
 
 /* Body */
-
+* {
+	box-sizing: border-box;
+}
 #github-image {
 	width: 60px;
 	position: absolute;
@@ -93,17 +95,17 @@ input[type=number]::-webkit-outer-spin-button {
 	margin: 0;
 }
 
-#form {
+.form {
 	display: table;
 	margin: 40px auto;
 }
 
-#form label {
+.form label {
 	position: relative;
 	display: block;
 }
 
-#form label input {
+.form label input {
 	font-size: 18px;
 	box-sizing: border-box;
 	display: block;
@@ -117,61 +119,61 @@ input[type=number]::-webkit-outer-spin-button {
 	transition: all 0.2s ease-in-out;
 }
 
-#form label input::-webkit-input-placeholder {
+.form label input::-webkit-input-placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-#form label input::-moz-placeholder {
+.form label input::-moz-placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-#form label input:-ms-input-placeholder {
+.form label input:-ms-input-placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-#form label input::placeholder {
+.form label input::placeholder {
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 	color: #999;
 	font-size: 18px;
 }
 
-#form label input:focus, #form label input.populated {
+.form label input:focus, .form label input.populated {
 	padding-top: 28px;
 	padding-bottom: 12px;
 }
 
-#form label input:focus::-webkit-input-placeholder, #form label input.populated::-webkit-input-placeholder {
+.form label input:focus::-webkit-input-placeholder, .form label input.populated::-webkit-input-placeholder {
 	color: transparent;
 }
 
-#form label input:focus::-moz-placeholder, #form label input.populated::-moz-placeholder {
+.form label input:focus::-moz-placeholder, .form label input.populated::-moz-placeholder {
 	color: transparent;
 }
 
-#form label input:focus:-ms-input-placeholder, #form label input.populated:-ms-input-placeholder {
+.form label input:focus:-ms-input-placeholder, .form label input.populated:-ms-input-placeholder {
 	color: transparent;
 }
 
-#form label input:focus::placeholder, #form label input.populated::placeholder {
+.form label input:focus::placeholder, .form label input.populated::placeholder {
 	color: transparent;
 }
 
-#form label input:focus + span, #form label input.populated + span {
+.form label input:focus + span, .form label input.populated + span {
 	opacity: 1;
 	top: 10px;
 }
 
-#form label span {
+.form label span {
 	color: #35dc9b;
 	font-size: .9em;
 	position: absolute;
@@ -219,15 +221,11 @@ button:active {
 }
 
 #numberWrapper ul{
+	margin: .5em;
 	list-style-type: none;
 	background-color: white;
 	color: #e64740;
 	cursor: pointer;
-}
-
-#disallowed {
-	user-select: none;
-	margin:.5em;
 }
 
 #disallowed > li {
@@ -247,11 +245,11 @@ button:active {
 	background-color: #f2f2f2;
 }
 
-#disallowed > #notice:hover {
+#disallowed > .notice:hover {
 	background-color: transparent;
 }
 
-#notice{
+.notice{
 	color: #939393;
 	font-size: .8em;
 	letter-spacing: .05em;
@@ -265,6 +263,49 @@ button:active {
 
 #numberWrapper button:hover {
 	background: #db443e;
+}
+
+#names-wrapper {
+	margin: .5em;
+}
+
+#names-wrapper ul{
+	text-align: left;
+	margin: .5em;
+	list-style-type: none;
+	background-color: white;
+}
+
+#names-wrapper li {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	cursor: pointer;
+	padding: 1em;
+	display: block;
+	transition: .3s;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+}
+
+#names-wrapper li:hover {
+	background-color: #f2f2f2;
+}
+#clear-names-button {
+	padding: 6px 16px;
+	background: #e64740;
+	font-size: 16px;
+}
+
+#clear-names-button:hover {
+	background: #db443e;
+}
+
+#addButton {
+	padding: 6px 16px;
+	font-size: 16px;
 }
 
 /* Footer */
