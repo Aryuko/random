@@ -5,7 +5,7 @@ Originally intended for @mjmuir to use in class when choosing which student to p
 Available at http://zalodu.github.io/random/
 
 Here's an example of how it looks in action:
-![alt text](http://puu.sh/mOuKw/9373683760.png "Example")
+![alt text](http://puu.sh/mOxQD/288eee2ed1.png "Example")
 
 ## How to use:
 Begin by inserting the **github handles** of all 13 total students through the input field. Left click to check/uncheck the checkboxes to mark whether the students are present or not. Right click to remove a handle. Increment the week number by left clicking the counter, decrement it by right clicking it.
