@@ -328,18 +328,13 @@ button:active {
 	font-size: 16px;
 }
 
-/* Footer */
-
-
+#goButton {
+	float: left;
+}
 
 #selectionBox {
 	display: inline-block;
 	margin: 20px auto;
 }
 
-#goButton {
-	float: left;
-}
-
-#content {
-}
+/* Footer */
