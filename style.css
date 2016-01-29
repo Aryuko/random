@@ -229,6 +229,22 @@ button:active {
 	text-decoration: none;
 }
 
+#week {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+	cursor: pointer;
+	display: inline-block;
+	font-size: 18px;
+	border: none;
+	background: white;
+	color: #00aa68;
+	padding: 16px 40px;
+	float: left;
+}
+
 #numberWrapper ul{
 	/margin: .5em;
 	list-style-type: none;

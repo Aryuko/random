@@ -1,6 +1,5 @@
 var students = [];
 var presentStudents = [];
-var week = 15;
 
 $(function () {
 	getCookies();
@@ -28,6 +27,7 @@ function getCookies () {
 		week = weekCookie;
 	}
 	
+	updateWeek();
 	initNames();
 }
 
