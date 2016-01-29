@@ -2,22 +2,52 @@ var students = [];
 var presentStudents = [];
 
 $(function () {
+	getCookies();
+	
 	$('#addButton').click(addClickEvent);
 	
 	$("#nameInput").keypress(function(event){
 		if (event.keyCode == 13)
 			addClickEvent();
-	});
+	});	
 });
+
+function getCookies () {
+	var studentsCookie = Cookies.getJSON('students');
+	var presentStudentsCookie = Cookies.getJSON('presentStudents');
+	
+	if(studentsCookie != null){
+		students = studentsCookie;
+	}
+	if(presentStudentsCookie != null){
+		presentStudents = presentStudentsCookie;
+	}
+	console.log("students: " + students + "    present: " + presentStudents);
+	console.log(students.length + "    " + presentStudents.length);
+	
+	initNames();
+}
+
+function setCookies () {
+	Cookies.set('students', students, {expires: 365});
+	Cookies.set('presentStudents', presentStudents, {expires: 365});
+}
+
+function initNames () {
+	for(var i = 0; i < students.length; i++){
+		var name = students[i];
+		addName(name, isPresent(name), false);
+	}
+}
 
 function addClickEvent () {
 	var newName = $("#nameInput").val();
 	$("#nameInput").val('');
 	$("#nameInput").removeClass('populated');
-	if(newName !=  "" && !alreadyAdded(newName)) updateNames(newName);
+	if(newName !=  "" && !alreadyAdded(newName)) addName(newName, true, true);
 }
 
-/* This is what updateNames builds:
+/* This is what addName builds:
 <label for="0">
 	<li>
 		<input id="0" type="checkbox" />
@@ -25,18 +55,29 @@ function addClickEvent () {
 	</li>
 </label>
 */
-function updateNames (newName) {
-	var currentIndex = students.length;
-	var html = '<label for="' + currentIndex + '"><li><input id="' + currentIndex + '" type="checkbox" /><span class="name">' + newName + '</span></li></label>';
+function addName (newName, checked, update) {
+	if(alreadyAdded(newName)) var currentIndex = students.indexOf(newName);
+	else var currentIndex = students.length;
 	
-	if(students.length == 0) {
+	if(checked) {
+		var html = '<label for="' + currentIndex + '"><li><input id="' + currentIndex + '" type="checkbox" checked="checked" /><span class="name">' + newName + '</span></li></label>';
+		if(update) presentStudents.push(newName);
+	}
+	else {
+		var html = '<label for="' + currentIndex + '"><li><input id="' + currentIndex + '" type="checkbox" /><span class="name">' + newName + '</span></li></label>';
+	}
+	
+	if($("#names > label").length == 0) {
 		$("#names").html(html);
 	}
 	else {
 		$("#names").append(html);
 	}
 	
-	students.push(newName);
+	if(update){ 
+		students.push(newName);
+		setCookies();
+	}
 }
 
 function alreadyAdded (student) {
@@ -63,6 +104,7 @@ $(function () {
 		$("#names").html('<li class="notice">No handles added</li>');
 		students = [];
 		presentStudents = [];
+		setCookies();
 		
 		//console.log(presentStudents);
 	});
@@ -83,6 +125,7 @@ $(document).on("change", ":checkbox", function (e) {
 		//console.log("unchecked, " + name);
 		//console.log("present:"  + presentStudents);
 	}
+	setCookies();
 });
 
 $(function () {
@@ -91,23 +134,19 @@ $(function () {
 	});
 	
 	$('body').delegate('ul#names li', 'mouseup', function (e) {
-	
+		if(e.button == 2) {
+			if (students.length != 0) {
+				var name = $(this).text();
 
-	if(e.button == 2) {
-		if (students.length != 0) {
-			var name = $(this).text();
+				students.splice(students.indexOf(name), 1);
+				if(isPresent(name)) presentStudents.splice(presentStudents.indexOf(name), 1);
+				setCookies();
 
-			students.splice(students.indexOf(name), 1);
-			if(isPresent(name)) presentStudents.splice(presentStudents.indexOf(name), 1);
-			
-			$(this).remove();
-			if (students.length == 0) {
-				$('#clear-names-button').click();
+				$(this).remove();
+				if (students.length == 0) {
+					$('#clear-names-button').click();
+				}
 			}
-			
-			//console.log(name + "removed!");
 		}
-	} 
-	return true; 
 	});
 });
