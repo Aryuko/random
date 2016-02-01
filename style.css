@@ -1,3 +1,7 @@
+/*
+	Green: #00aa68;
+*/
+
 /* Css reset */
 
 /*
@@ -84,7 +88,6 @@ body{
 }
 
 #numberWrapper {
-	/margin-top: 2em;
 	height: 100%;
 	width: 50%;
 }
@@ -216,13 +219,32 @@ button:active {
 	border: none;
 	background: white;
 	color: #00aa68;
-	padding: 16px 40px;
 	float: left;
+	
+	height: 50px;
+	overflow: hidden;
 }
 
 #output a {
 	color: #00aa68;
 	text-decoration: none;
+}
+
+#output ul {
+	position: relative;
+}
+
+.outputTransition {
+	transition: top 5s cubic-bezier(0,0,0,1);
+}
+
+#output ul li {
+	display: block;
+	font-size: 18px;
+	border: none;
+	background: white;
+	padding: 16px 40px;
+	border-bottom: 1px solid #00aa68;
 }
 
 #week {
@@ -242,7 +264,6 @@ button:active {
 }
 
 #numberWrapper ul{
-	/margin: .5em;
 	list-style-type: none;
 	background-color: white;
 	color: #e64740;
@@ -291,14 +312,12 @@ button:active {
 }
 
 #names-wrapper {
-	/margin: .5em;
 	height: 100%;
 	width: 50%;
 }
 
 #names-wrapper ul{
 	text-align: left;
-	/margin: .5em;
 	list-style-type: none;
 	background-color: white;
 }
