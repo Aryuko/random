@@ -41,19 +41,20 @@ function updateResult (student) {
 }*/
 
 function updateResult (student) {	
-	spinner(student);
-	
-	var html = '<li>' + student + '</li>';
-	if(disallowedNames.length == 0) {
-		$("#numberWrapper ul").html(html);
-	}
-	else {
-		$("#numberWrapper ul").append(html);
-	}
-	disallowedNames.push(student);
+	spin(student);
+	window.setTimeout(function () {
+		var html = '<li>' + student + '</li>';
+		if(disallowedNames.length == 0) {
+			$("#numberWrapper ul").html(html);
+		}
+		else {
+			$("#numberWrapper ul").append(html);
+		}
+		disallowedNames.push(student);
+	}, 5000);
 }
 
-function spinner (student) {
+function spin (student) {
 	var spinList = [];
 	spinList = spinList.concat(presentStudents);	//basically spinList = presentStudents, but doesn't glitch
 	
