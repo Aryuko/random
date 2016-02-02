@@ -85,7 +85,7 @@ function buildSpinner (list) {
 	for (var i = 0; i < list.length - 1; i++) {
 		html += '<li>' + list[i] + '</li>';
 	}
-	html += '<li><a href="https://gits-15.sys.kth.se/INDA15/' + selectedStudent + '-week-' + week + '" target="_blank">' + selectedStudent + '</a></li>';
+	html += '<a href="https://gits-15.sys.kth.se/INDA15/' + selectedStudent + '-week-' + week + '" target="_blank"><li>' + selectedStudent + '</li></a>';
 	
 	$("#output ul").html(html);
 }
