@@ -66,8 +66,6 @@ function spin (student) {
 	
 	var savedIndex = spinList.length - 1;			//save index we will scroll to
 	
-	spinList = spinList.concat(spinList);			//add one more to make the list continue after the destination, making it look endless
-	
 	buildSpinner(spinList);
 	$("#output ul").removeClass("outputTransition");
 	
@@ -87,7 +85,7 @@ function buildSpinner (list) {
 	for (var i = 0; i < list.length - 1; i++) {
 		html += '<li>' + list[i] + '</li>';
 	}
-	html += '<a href="https://gits-15.sys.kth.se/INDA15/' + selectedStudent + '-week-' + week + '" target="_blank">' + selectedStudent + '</a>';
+	html += '<li><a href="https://gits-15.sys.kth.se/INDA15/' + selectedStudent + '-week-' + week + '" target="_blank">' + selectedStudent + '</a></li>';
 	
 	$("#output ul").html(html);
 }

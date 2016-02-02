@@ -245,6 +245,12 @@ button:active {
 	background: white;
 	padding: 16px 40px;
 	border-bottom: 1px solid #00aa68;
+	cursor: pointer;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 #week {
