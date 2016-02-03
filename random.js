@@ -1,4 +1,5 @@
 var disallowedNames = [];
+var spinInProgress = false;
 
 $(function () {
 	$('#goButton').click(clickEvent);
@@ -40,18 +41,22 @@ function updateResult (student) {
 	disallowedNames.push(student);
 }*/
 
-function updateResult (student) {	
-	spin(student);
-	window.setTimeout(function () {
-		var html = '<li>' + student + '</li>';
-		if(disallowedNames.length == 0) {
-			$("#numberWrapper ul").html(html);
-		}
-		else {
-			$("#numberWrapper ul").append(html);
-		}
-		disallowedNames.push(student);
-	}, 5000);
+function updateResult (student) {
+	if(!spinInProgress) {
+		spinInProgress = true;
+		spin(student);
+		window.setTimeout(function () {
+			var html = '<li>' + student + '</li>';
+			if(disallowedNames.length == 0) {
+				$("#numberWrapper ul").html(html);
+			}
+			else {
+				$("#numberWrapper ul").append(html);
+			}
+			disallowedNames.push(student);
+			spinInProgress = false;
+		}, 5000);
+	}
 }
 
 function spin (student) {
