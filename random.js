@@ -27,19 +27,6 @@ function isAllowed (index) {
 	}
 	return true;
 }
-/*
-function updateResult (student) {
-	$("#output").html('<a href="https://gits-15.sys.kth.se/INDA15/' + student + '-week-' + week + '" target="_blank">' + student + '</a>');
-	
-	var html = '<li>' + student + '</li>';
-	if(disallowedNames.length == 0) {
-		$("#numberWrapper ul").html(html);
-	}
-	else {
-		$("#numberWrapper ul").append(html);
-	}
-	disallowedNames.push(student);
-}*/
 
 function updateResult (student) {
 	if(!spinInProgress) {
