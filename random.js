@@ -1,5 +1,6 @@
 var disallowedNames = [];
 var spinInProgress = false;
+var selectedStudent = '';
 
 $(function () {
 	$('#goButton').click(clickEvent);
@@ -71,13 +72,13 @@ function spin (student) {
 }
 
 function buildSpinner (list) {
-	var selectedStudent = list[list.length - 1];				//selected student, at end of list
+	selectedStudent = list[list.length - 1];				//selected student, at end of list
 	
 	var html = '';
 	for (var i = 0; i < list.length - 1; i++) {
 		html += '<li>' + list[i] + '</li>';
 	}
-	html += '<a href="https://gits-15.sys.kth.se/INDA15/' + selectedStudent + '-week-' + week + '" target="_blank"><li>' + selectedStudent + '</li></a>';
+	html += '<a id="target" href="https://gits-15.sys.kth.se/INDA15/' + selectedStudent + '-' + url + '" target="_blank"><li>' + selectedStudent + '</li></a>';
 	
 	$("#output ul").html(html);
 }

@@ -253,13 +253,7 @@ button:active {
 	user-select: none;
 }
 
-#week {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	
-	cursor: pointer;
+#url {
 	display: inline-block;
 	font-size: 18px;
 	border: none;
@@ -267,6 +261,8 @@ button:active {
 	color: #00aa68;
 	padding: 16px 40px;
 	float: left;
+    text-align: center;
+    width: 10em;
 }
 
 #numberWrapper ul{
@@ -388,3 +384,5 @@ input[type="checkbox"]:checked + label{
 }
 
 /* Footer */
+
+

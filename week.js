@@ -1,23 +1,26 @@
-var week = 15;
+var url = "week-15";
+
+function updateUrl () {
+	var text = url;
+	$("#url").val(text);
+    
+    var urlInput = $("#url");
+}
+
+function getUrl () {
+    return $("#url").val().trim();
+}
 
 $(function () {
-	$('body').delegate('#week', 'contextmenu', function() {
-		return false;
-	});
-	
-	$('body').delegate('#week', 'mouseup', function (e) {
-		if(e.button == 0) {
-			week ++;
-		}
-		else if(e.button == 2) {
-			week --;
-		}
-		setCookies();
-		updateWeek();
-	});
+	$("#url").keyup(function(event){
+        url = getUrl();
+        if(url.charAt(0) == "-") url = url.substring(1);
+        setCookies();
+        
+        var targetUrl = $('#target').attr("href");
+        
+        if(targetUrl != null) {
+            $('#target').attr("href", "https://gits-15.sys.kth.se/INDA15/" + selectedStudent + "-" + url);
+        }
+	});	
 });
-
-function updateWeek () {
-	var text = "Week " + week;
-	$("#week").text(text);
-}

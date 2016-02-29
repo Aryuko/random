@@ -15,7 +15,7 @@ $(function () {
 function getCookies () {
 	var studentsCookie = Cookies.getJSON('students');
 	var presentStudentsCookie = Cookies.getJSON('presentStudents');
-	var weekCookie = Cookies.get('week');
+    var urlCookie = Cookies.get('url');
 	
 	if(studentsCookie != null){
 		students = studentsCookie;
@@ -23,18 +23,18 @@ function getCookies () {
 	if(presentStudentsCookie != null){
 		presentStudents = presentStudentsCookie;
 	}
-	if(weekCookie != null){
-		week = weekCookie;
+	if(urlCookie != null){
+		url = urlCookie;
 	}
 	
-	updateWeek();
+	updateUrl();
 	initNames();
 }
 
 function setCookies () {
 	Cookies.set('students', students, {expires: 365});
 	Cookies.set('presentStudents', presentStudents, {expires: 365});
-	Cookies.set('week', week, {expires: 365});
+	Cookies.set('url', url, {expires: 365});
 }
 
 function initNames () {
