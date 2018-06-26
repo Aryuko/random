@@ -2,10 +2,10 @@
 A small tool for randomly selecting a student within a specified collection without allowing repetition.
 Originally intended for @mjmuir to use in class when choosing which student to present their answers, as to not randomly select the same student twice.
 
-Available at http://zalodu.github.io/random/
+Available at http://aryuko.github.io/random/
 
 Here's an example of how it looks in action:
-![alt text](http://puu.sh/mOxQD/288eee2ed1.png "Example")
+![alt text](https://i.imgur.com/e6HK0u2.png "Example")
 
 ## How to use:
 Begin by inserting the **github handles** of all 13 total students through the input field. Left click to check/uncheck the checkboxes to mark whether the students are present or not. Right click to remove a handle. Increment the week number by left clicking the counter, decrement it by right clicking it.
